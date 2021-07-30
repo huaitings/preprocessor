@@ -1,0 +1,4 @@
+variable latticedft equal 4.5765
+variable latticeexp equal 4.4570
+variable latticescale equal ${latticeexp}/${latticedft}
+change_box all x scale ${latticescale} y scale ${latticescale} z scale ${latticescale} remap units box

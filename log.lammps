@@ -1,0 +1,55 @@
+LAMMPS (29 Oct 2020)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:94)
+  using 1 OpenMP thread(s) per MPI task
+echo none
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:94)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (9.9393000 9.8127000 9.8226000) with tilt (6.0083474e-16 6.0144092e-16 6.0144092e-16)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  53 atoms
+  read_data CPU = 0.006 seconds
+replicate 1
+replicate 1
+replicate 1
+Replicating atoms ...
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (9.9393000 9.8127000 9.8226000) with tilt (6.0083474e-16 6.0144092e-16 6.0144092e-16)
+  1 by 1 by 1 MPI processor grid
+  53 atoms
+  replicate CPU = 0.000 seconds
+System init for write_data ...
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 0
+  ghost atom cutoff = 0
+  binsize = 9.9393, bins = 1 1 1
+  0 neighbor lists, perpetual/occasional/extra = 0 0 0
+WARNING: Communication cutoff is 0.0. No ghost atoms will be generated. Atoms may get lost. (src/comm_brick.cpp:167)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:94)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (14.446000 10.160400 9.6402000) with tilt (6.2212452e-16 5.9027251e-16 5.9027251e-16)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  58 atoms
+  read_data CPU = 0.005 seconds
+replicate 1
+replicate 1
+replicate 1
+Replicating atoms ...
+  triclinic box = (0.0000000 0.0000000 0.0000000) to (14.446000 10.160400 9.6402000) with tilt (6.2212452e-16 5.9027251e-16 5.9027251e-16)
+  1 by 1 by 1 MPI processor grid
+  58 atoms
+  replicate CPU = 0.001 seconds
+System init for write_data ...
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 0
+  ghost atom cutoff = 0
+  binsize = 14.446, bins = 1 1 1
+  0 neighbor lists, perpetual/occasional/extra = 0 0 0
+WARNING: Communication cutoff is 0.0. No ghost atoms will be generated. Atoms may get lost. (src/comm_brick.cpp:167)
+Total wall time: 0:00:00

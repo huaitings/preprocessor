@@ -1,0 +1,60 @@
+echo none
+
+variable jumpname index lmp_rc_eval.in # for "jump" filename
+
+variable repli equal 4 # times for replicate
+variable rc2 equal 4.5*2 ##### 6.5 from meam file 
+include ./output/allrefdata.in ## all data files use index variable
+
+label data
+clear 
+units metal 
+dimension 3 
+boundary p p p
+box tilt large 
+atom_style atomic 
+atom_modify map array
+
+shell cd output
+read_data ${filename}
+shell cd ..
+# ---------- Define Interatomic Potential --------------------- 
+                                               
+pair_style none # only for data file modification, so potential is not used
+
+mass * 1.0  # not used, only for data file modification
+
+variable tempx equal lx/${rc2}
+variable tempy equal ly/${rc2}
+variable tempz equal lz/${rc2}
+
+if "${tempx} < 1" then &
+	"variable temp equal 1/${tempx}" &
+	"variable replix equal ceil(${temp})" &
+else &
+	"variable replix equal 1"
+print "replicate ${replix}"
+
+if "${tempy} < 1" then &
+	"variable temp equal 1/${tempy}" &
+	"variable repliy equal ceil(${temp})" &
+else &
+	"variable repliy equal 1"
+print "replicate ${repliy}"
+
+if "${tempz} < 1" then &
+	"variable temp equal 1/${tempz}" &
+	"variable repliz equal ceil(${temp})" &
+else &
+	"variable repliz equal 1"
+print "replicate ${repliz}"
+
+replicate ${replix} ${repliy} ${repliz} #need to provide the cell large enough from car file 
+
+shell cd modified_datafiles # preprocessor will create this folder first
+write_data ${filename}
+shell cd ..
+
+print "${filename} " append data.txt screen no
+next filename 
+jump ${jumpname} data
